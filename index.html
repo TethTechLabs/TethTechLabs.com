@@ -3,387 +3,963 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | Teth Tech Labs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <title>Teth Tech Labs — Professional Apps, Built from Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+JP:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0a0a0f;
-      --surface: #111118;
-      --border: #1e1e2e;
-      --accent: #6c63ff;
-      --text-primary: #e8e8f0;
-      --text-secondary: #8888aa;
-      --text-muted: #555570;
+      --bg: #fafaf8;
+      --white: #ffffff;
+      --border: #e6e6e0;
+      --border-light: #f0f0eb;
+      --text: #111111;
+      --sub: #888888;
+      --muted: #cccccc;
+      --accent: #111111;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
-      color: var(--text-primary);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.8;
-      min-height: 100vh;
+      color: var(--text);
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
     }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 24px 48px;
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .lang-toggle {
-      display: flex;
-      gap: 4px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 4px;
-    }
-
-    .lang-btn {
-      padding: 6px 14px;
-      border-radius: 6px;
-      border: none;
-      background: transparent;
-      color: var(--text-secondary);
-      font-size: 13px;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .lang-btn.active {
-      background: var(--accent);
-      color: #fff;
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 64px 48px 120px;
-    }
-
-    .page-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 36px;
-      font-weight: 600;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-
-    .updated {
-      color: var(--text-muted);
-      font-size: 13px;
-      margin-bottom: 56px;
-    }
-
-    .updated span {
-      color: var(--accent);
-    }
-
-    section {
-      margin-bottom: 48px;
-      padding-bottom: 48px;
+      padding: 0 60px;
+      height: 64px;
+      background: rgba(250,250,248,0.95);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
 
-    section:last-child {
-      border-bottom: none;
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.01em;
     }
 
-    h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.08em;
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--sub);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 80px 0 60px;
+    }
+
+    .hero-kicker {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 6.5vw, 88px);
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .hero-tagline {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: #444;
+      line-height: 1.85;
+      max-width: 560px;
+    }
+
+    .hero-tagline strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* HERO SPLIT BOTTOM */
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-desc-block {
+      padding: 44px 60px 44px 0;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--sub);
+      line-height: 1.95;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 3px;
+      transition: gap 0.25s;
+    }
+
+    .btn-primary:hover { gap: 16px; }
+
+    .hero-meta {
+      padding: 44px 0 44px 60px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .meta-item:last-child { border-bottom: none; }
+
+    .meta-k {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .meta-v {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* APPS */
+    #apps {
+      padding: 96px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 72px;
+      align-items: end;
+    }
+
+    .section-kicker {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-bottom: 16px;
     }
 
-    p {
-      color: var(--text-secondary);
-      margin-bottom: 12px;
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
     }
 
-    ul {
-      list-style: none;
-      margin: 12px 0;
-    }
+    .section-title em { font-style: italic; color: var(--muted); }
 
-    ul li {
-      color: var(--text-secondary);
-      padding: 6px 0 6px 20px;
-      position: relative;
-    }
-
-    ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--text-muted);
-    }
-
-    .contact-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 16px;
-    }
-
-    .contact-box a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 48px;
-      text-align: center;
-      color: var(--text-muted);
+    .section-note {
+      font-family: 'Noto Sans JP', sans-serif;
       font-size: 13px;
+      font-weight: 300;
+      color: var(--sub);
+      line-height: 1.9;
+      align-self: end;
     }
 
-    .lang-content { display: none; }
-    .lang-content.active { display: block; }
+    /* STACK */
+    .stack-layout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-    @media (max-width: 640px) {
-      header { padding: 16px 20px; }
-      main { padding: 40px 20px 80px; }
-      .page-title { font-size: 28px; }
-      footer { padding: 16px 20px; }
+    .stack {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      flex-shrink: 0;
+    }
+
+    .card {
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      padding: 32px 28px;
+      cursor: grab;
+      transform-origin: bottom center;
+      will-change: transform;
+    }
+
+    .card:active { cursor: grabbing; }
+
+    .card:nth-last-child(2) {
+      transform: scale(0.96) translateY(10px);
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card:nth-last-child(3) {
+      transform: scale(0.92) translateY(20px);
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card:nth-last-child(n+4) { opacity: 0; pointer-events: none; }
+
+    .card:last-child {
+      z-index: 10;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .card.dragging { transition: none !important; }
+
+    .card.fly-left {
+      transition: transform 0.36s cubic-bezier(0.4,0,0.2,1), opacity 0.3s !important;
+      transform: translateX(-140%) rotate(-14deg) !important;
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+
+    .card.fly-right {
+      transition: transform 0.36s cubic-bezier(0.4,0,0.2,1), opacity 0.3s !important;
+      transform: translateX(140%) rotate(14deg) !important;
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+
+    .card-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: auto;
+    }
+
+    .card-icon { font-size: 26px; margin-bottom: 16px; display: block; line-height: 1; }
+
+    .card-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card-desc {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--sub);
+      line-height: 1.8;
+      flex: 1;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .card-status {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
+    .dot.live { background: var(--text); animation: blink 2s infinite; }
+
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .card-platform {
+      font-family: 'Inter', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .d-hint {
+      position: absolute;
+      top: 14px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-family: 'Inter', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.12s;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    .d-hint-l { left: 10px; border: 1px solid rgba(180,40,40,0.2); color: rgba(180,40,40,0.45); }
+    .d-hint-r { right: 10px; border: 1px solid rgba(0,0,0,0.12); color: rgba(0,0,0,0.3); }
+
+    /* STACK CONTROLS */
+    .stack-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .stack-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 2.4vw, 32px);
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .stack-tagline em { font-style: italic; color: var(--muted); }
+
+    .stack-body {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--sub);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+
+    .stack-nav { display: flex; gap: 8px; margin-bottom: 12px; }
+
+    .stack-btn {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--sub);
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .stack-btn:hover { border-color: var(--text); color: var(--text); }
+
+    .stack-count {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .empty {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      height: 400px;
+      justify-content: center;
+    }
+
+    .empty.show { display: flex; }
+
+    .empty-t {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .reset-btn {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--sub);
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 2px;
+    }
+
+    .reset-btn:hover { color: var(--text); border-color: var(--text); }
+
+    /* ABOUT */
+    #about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-l {
+      padding: 96px 60px;
+      border-right: 1px solid var(--border);
+    }
+
+    .about-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3.2vw, 44px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+    }
+
+    .about-title em { font-style: italic; color: var(--muted); }
+
+    .about-body p {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #666;
+      line-height: 1.95;
+      margin-bottom: 16px;
+    }
+
+    .about-r {
+      padding: 96px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* CREDENTIALS */
+    .cred-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .cred-list { border-top: 1px solid var(--border); }
+
+    .cred-item {
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .cred-icon {
+      font-size: 16px;
+      width: 32px;
+      text-align: center;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    .cred-text {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: #555;
+      flex: 1;
+      line-height: 1.5;
+    }
+
+    .cred-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    /* CONTACT */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-l {
+      padding: 96px 60px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4.5vw, 64px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-title em { font-style: italic; color: var(--muted); }
+
+    .contact-sub {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--sub);
+      line-height: 1.9;
+    }
+
+    .contact-r {
+      padding: 96px 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-links { width: 100%; border-top: 1px solid var(--border); }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-light);
+      text-decoration: none;
+      color: var(--sub);
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--text); }
+
+    .contact-link span {
+      color: var(--muted);
+      transition: transform 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .contact-link:hover span { color: var(--sub); transform: translateX(4px); }
+
+    /* FOOTER */
+    footer {
+      padding: 24px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .footer-nav { display: flex; gap: 28px; }
+
+    .footer-nav a {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 0 20px; }
+      .hero-bottom { grid-template-columns: 1fr; }
+      .hero-desc-block { border-right: none; border-bottom: 1px solid var(--border); padding: 36px 0; }
+      .hero-meta { padding: 36px 0; }
+      #apps { padding: 64px 20px; }
+      .section-top { grid-template-columns: 1fr; }
+      .stack-layout { grid-template-columns: 1fr; justify-items: center; gap: 48px; }
+      #about, #contact { grid-template-columns: 1fr; }
+      .about-l, .contact-l { border-right: none; border-bottom: 1px solid var(--border); padding: 64px 20px; }
+      .about-r, .contact-r { padding: 64px 20px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px 20px; }
+      .footer-nav { flex-wrap: wrap; justify-content: center; }
+      .stack { width: 260px; height: 360px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Teth<span>Tech</span>Labs</div>
-  <div class="lang-toggle">
-    <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
-    <button class="lang-btn" onclick="setLang('en')">English</button>
+<nav>
+  <a href="/" class="nav-logo">Teth Tech Labs</a>
+  <ul class="nav-links">
+    <li><a href="#apps">アプリ</a></li>
+    <li><a href="#about">について</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+    <li><a href="/privacy.html">プライバシー</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-main reveal">
+    <div>
+      <p class="hero-kicker">Independent App Studio</p>
+      <h1 class="hero-title">
+        Professional Apps.<br>
+        Built from<br>
+        <em>Experience.</em>
+      </h1>
+      <p class="hero-tagline">
+        <strong>25年以上の金融営業・審査実務</strong>から生まれた、<br>
+        現場を知る人間が作るアプリ。
+      </p>
+    </div>
   </div>
-</header>
 
-<main>
-
-  <!-- 日本語 -->
-  <div class="lang-content active" id="lang-ja">
-    <h1 class="page-title">プライバシーポリシー</h1>
-    <p class="updated">最終更新日：<span>2026年6月</span></p>
-
-    <section>
-      <h2>01 — はじめに</h2>
-      <p>Teth Tech Labs（以下「当社」）は、当社が提供するアプリケーションおよびサービス（以下「本サービス」）における利用者の個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
-    </section>
-
-    <section>
-      <h2>02 — 収集する情報</h2>
-      <p>本サービスでは、以下の情報を収集することがあります。</p>
-      <ul>
-        <li>メールアドレス・ユーザー名などのアカウント情報</li>
-        <li>デバイスID、IPアドレス、OSバージョンなどの端末情報</li>
-        <li>アプリの利用状況・操作ログ（アナリティクス）</li>
-        <li>位置情報（機能提供に必要な場合のみ、許可取得後）</li>
-        <li>カメラ・マイク・写真へのアクセス（機能提供に必要な場合のみ）</li>
-        <li>AI機能利用時に入力されたテキスト・画像等のコンテンツ</li>
-        <li>購入履歴・課金情報（決済はApple/Googleの仕組みを通じて処理）</li>
-        <li>広告識別子（IDFA/GAID）※広告を含むアプリの場合</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>03 — 情報の利用目的</h2>
-      <p>収集した情報は以下の目的で利用します。</p>
-      <ul>
-        <li>本サービスの提供・運営・改善</li>
-        <li>ユーザーサポートへの対応</li>
-        <li>不正利用の検知・防止</li>
-        <li>利用状況の分析・新機能の開発</li>
-        <li>法令に基づく対応</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>04 — 第三者への提供</h2>
-      <p>当社は、以下の場合を除き、収集した個人情報を第三者に提供しません。</p>
-      <ul>
-        <li>ユーザーの同意がある場合</li>
-        <li>法令に基づく開示が必要な場合</li>
-        <li>サービス提供に必要な業務委託先への提供（守秘義務契約あり）</li>
-      </ul>
-      <p>本サービスでは以下のような第三者サービスを利用する場合があります。</p>
-      <ul>
-        <li>Firebase / Google Analytics（利用状況分析）</li>
-        <li>OpenAI / Anthropic / その他AI API（AI機能提供）</li>
-        <li>Apple App Store / Google Play（課金処理）</li>
-        <li>広告ネットワーク（AdMob等）※広告含むアプリの場合</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>05 — データの保管・セキュリティ</h2>
-      <p>収集した情報は適切なセキュリティ対策を施したサーバーで管理します。ただし、インターネット上での完全な安全性を保証するものではありません。</p>
-    </section>
-
-    <section>
-      <h2>06 — ユーザーの権利</h2>
-      <p>ユーザーは以下の権利を有します。</p>
-      <ul>
-        <li>保有する個人情報の開示請求</li>
-        <li>個人情報の訂正・削除の請求</li>
-        <li>アカウントの削除（アプリ内設定またはお問い合わせより）</li>
-        <li>マーケティング通知のオプトアウト</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>07 — 子どものプライバシー</h2>
-      <p>本サービスは13歳未満の方を対象としていません。13歳未満の方から意図せず情報を収集した場合、速やかに削除します。</p>
-    </section>
-
-    <section>
-      <h2>08 — ポリシーの変更</h2>
-      <p>本ポリシーは予告なく変更される場合があります。重要な変更がある場合はアプリ内または本ページにて通知します。</p>
-    </section>
-
-    <section>
-      <h2>09 — お問い合わせ</h2>
-      <div class="contact-box">
-        <p>プライバシーに関するお問い合わせは以下までご連絡ください。</p>
-        <p>Teth Tech Labs<br>
-        <a href="mailto:TethTechLabs@gmail.com">TethTechLabs@gmail.com</a><br>
-        <a href="https://tethtechlabs.com">tethtechlabs.com</a></p>
+  <div class="hero-bottom">
+    <div class="hero-desc-block reveal">
+      <p class="hero-desc">銀行・金融機関での営業・審査経験とAI技術を組み合わせ、実務に根ざしたアプリを開発・提供しています。iOSとAndroid、世界175カ国以上に対応。</p>
+      <a href="#apps" class="btn-primary">アプリを見る →</a>
+    </div>
+    <div class="hero-meta reveal">
+      <div class="meta-item">
+        <span class="meta-k">Experience</span>
+        <span class="meta-v">金融営業・審査 25年以上</span>
       </div>
-    </section>
-  </div>
-
-  <!-- English -->
-  <div class="lang-content" id="lang-en">
-    <h1 class="page-title">Privacy Policy</h1>
-    <p class="updated">Last updated: <span>June 2026</span></p>
-
-    <section>
-      <h2>01 — Introduction</h2>
-      <p>Teth Tech Labs ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our applications and services ("Services").</p>
-    </section>
-
-    <section>
-      <h2>02 — Information We Collect</h2>
-      <p>We may collect the following types of information:</p>
-      <ul>
-        <li>Account information such as email address and username</li>
-        <li>Device information including device ID, IP address, and OS version</li>
-        <li>Usage data and analytics logs</li>
-        <li>Location data (only when required for features, with your permission)</li>
-        <li>Camera, microphone, or photo access (only when required for features)</li>
-        <li>Content you input when using AI-powered features (text, images, etc.)</li>
-        <li>Purchase history (payments are processed through Apple/Google)</li>
-        <li>Advertising identifiers (IDFA/GAID) for apps with advertisements</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>03 — How We Use Your Information</h2>
-      <p>We use the collected information to:</p>
-      <ul>
-        <li>Provide, operate, and improve our Services</li>
-        <li>Respond to user support requests</li>
-        <li>Detect and prevent fraud or misuse</li>
-        <li>Analyze usage patterns and develop new features</li>
-        <li>Comply with legal obligations</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>04 — Third-Party Services</h2>
-      <p>We do not sell your personal information. We may share data with third parties only in the following cases:</p>
-      <ul>
-        <li>With your consent</li>
-        <li>When required by law</li>
-        <li>With service providers under confidentiality agreements</li>
-      </ul>
-      <p>Our Services may integrate the following third-party services:</p>
-      <ul>
-        <li>Firebase / Google Analytics (usage analytics)</li>
-        <li>OpenAI / Anthropic / other AI APIs (AI-powered features)</li>
-        <li>Apple App Store / Google Play (in-app purchases)</li>
-        <li>Ad networks such as AdMob (for apps with advertisements)</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>05 — Data Security</h2>
-      <p>We implement appropriate security measures to protect your information. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
-    </section>
-
-    <section>
-      <h2>06 — Your Rights</h2>
-      <p>You have the right to:</p>
-      <ul>
-        <li>Request access to your personal data</li>
-        <li>Request correction or deletion of your data</li>
-        <li>Delete your account (via in-app settings or by contacting us)</li>
-        <li>Opt out of marketing communications</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>07 — Children's Privacy</h2>
-      <p>Our Services are not directed to children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete it promptly.</p>
-    </section>
-
-    <section>
-      <h2>08 — Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes through the app or on this page.</p>
-    </section>
-
-    <section>
-      <h2>09 — Contact Us</h2>
-      <div class="contact-box">
-        <p>For privacy-related inquiries, please contact us at:</p>
-        <p>Teth Tech Labs<br>
-        <a href="mailto:TethTechLabs@gmail.com">TethTechLabs@gmail.com</a><br>
-        <a href="https://tethtechlabs.com">tethtechlabs.com</a></p>
+      <div class="meta-item">
+        <span class="meta-k">Platform</span>
+        <span class="meta-v">iOS & Android</span>
       </div>
-    </section>
+      <div class="meta-item">
+        <span class="meta-k">Distribution</span>
+        <span class="meta-v">175+ 国・地域</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-k">Technology</span>
+        <span class="meta-v">AI-Powered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section id="apps">
+  <div class="section-top reveal">
+    <div>
+      <p class="section-kicker">Products</p>
+      <h2 class="section-title">
+        実務経験から<br>生まれた<em>アプリ群。</em>
+      </h2>
+    </div>
+    <p class="section-note">スワイプまたは矢印でアプリを閲覧できます。金融・AI・資格など、現場の課題を解決するツールを開発しています。</p>
   </div>
 
-</main>
+  <div class="stack-layout">
+    <div>
+      <div class="stack" id="stack">
+        <div class="d-hint d-hint-l" id="hL">Skip</div>
+        <div class="d-hint d-hint-r" id="hR">Next</div>
+      </div>
+      <div class="empty" id="empty">
+        <div class="empty-t">続々リリース予定。</div>
+        <button class="reset-btn" onclick="reset()">↺ もう一度見る</button>
+      </div>
+    </div>
 
+    <div class="stack-info reveal">
+      <h3 class="stack-tagline">
+        すべてのアプリに、<br>
+        <em>実務の知恵が宿る。</em>
+      </h3>
+      <p class="stack-body">25年超の金融実務で培った知識をアプリに凝縮。「使える」ツールとは何かを知る人間が、一つひとつ丁寧に設計しています。</p>
+      <div class="stack-nav" id="snav">
+        <button class="stack-btn" onclick="sw('left')">←</button>
+        <button class="stack-btn" onclick="sw('right')">→</button>
+      </div>
+      <div class="stack-count" id="cnt">1 / 4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-l reveal">
+    <p class="section-kicker">About</p>
+    <h2 class="about-title">
+      経験が、<br>
+      テクノロジーと<br>
+      <em>出会う場所。</em>
+    </h2>
+    <div class="about-body">
+      <p>Teth Tech Labsは、25年以上の金融実務経験を持つ開発者が運営する個人アプリスタジオです。</p>
+      <p>銀行・金融機関での営業・審査業務で培った専門知識とAI技術を掛け合わせ、現場を知る人間だからこそ作れるアプリを届けます。</p>
+    </div>
+  </div>
+  <div class="about-r reveal">
+    <div>
+      <p class="cred-header">資格一覧</p>
+      <div class="cred-list">
+        <div class="cred-item">
+          <div class="cred-icon">📊</div>
+          <span class="cred-text">FP技能士1級</span>
+          <span class="cred-badge">取得済み</span>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon">🏠</div>
+          <span class="cred-text">宅地建物取引士、他</span>
+          <span class="cred-badge">取得済み</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="cred-header">実績</p>
+      <div class="cred-list">
+        <div class="cred-item">
+          <div class="cred-icon">🏦</div>
+          <span class="cred-text">金融機関での営業・審査業務</span>
+          <span class="cred-badge">25年以上</span>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon">🤖</div>
+          <span class="cred-text">AI技術を活用した開発</span>
+          <span class="cred-badge">現役稼働中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-l reveal">
+    <div>
+      <p class="section-kicker">Contact</p>
+      <h2 class="contact-title">
+        お気軽に<br>
+        <em>ご連絡を。</em>
+      </h2>
+    </div>
+    <p class="contact-sub">ご質問・ご提案・取材のお問い合わせなど、お気軽にご連絡ください。</p>
+  </div>
+  <div class="contact-r reveal">
+    <div class="contact-links">
+      <a href="mailto:info@tethtechlabs.com" class="contact-link">
+        info@tethtechlabs.com <span>→</span>
+      </a>
+      <a href="/privacy.html" class="contact-link">
+        プライバシーポリシー <span>→</span>
+      </a>
+      <a href="https://tethtechlabs.com" class="contact-link">
+        tethtechlabs.com <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  © 2026 Teth Tech Labs. All rights reserved.
+  <div class="footer-logo">Teth Tech Labs</div>
+  <nav class="footer-nav">
+    <a href="#apps">アプリ</a>
+    <a href="#about">について</a>
+    <a href="#contact">お問い合わせ</a>
+    <a href="/privacy.html">プライバシー</a>
+  </nav>
+  <div class="footer-copy">© 2026 Teth Tech Labs</div>
 </footer>
 
 <script>
-  function setLang(lang) {
-    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
-    document.getElementById('lang-' + lang).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
+const apps = [
+  { num: '01', icon: '◈', tag: '資格対策 · AI', name: '資格アプリ', desc: 'FP・宅建など金融・不動産系資格の取得を、AIがサポート。実務経験に基づいた問題解説が強み。', status: 'dev', platform: 'iOS · Android' },
+  { num: '02', icon: '◎', tag: 'シミュレーション', name: 'シミュレーション系', desc: 'ローン・投資・保険など、金融の意思決定をシミュレーションで可視化。25年の審査眼が設計に宿る。', status: 'dev', platform: 'iOS · Android' },
+  { num: '03', icon: '⬡', tag: '英語学習 · AI', name: '英語関連', desc: 'AIを活用した実践的な英語学習アプリ。金融・ビジネス英語にも対応。', status: 'planned', platform: 'iOS · Android' },
+  { num: '04', icon: '◇', tag: 'ホビー · ライフスタイル', name: 'ホビー系', desc: '趣味や日常をより豊かにするライフスタイルアプリ。技術と遊び心を融合させた一本。', status: 'planned', platform: 'iOS · Android' },
+];
 
+let cur = 0;
+const stk = document.getElementById('stack');
+const cnt = document.getElementById('cnt');
+const hL = document.getElementById('hL');
+const hR = document.getElementById('hR');
+const empty = document.getElementById('empty');
+const snav = document.getElementById('snav');
+
+function mkCard(app) {
+  const c = document.createElement('div');
+  c.className = 'card';
+  c.innerHTML = `
+    <div class="card-num">${app.num} / 0${apps.length}</div>
+    <span class="card-icon">${app.icon}</span>
+    <div class="card-tag">${app.tag}</div>
+    <div class="card-name">${app.name}</div>
+    <div class="card-desc">${app.desc}</div>
+    <div class="card-footer">
+      <div class="card-status"><div class="dot ${app.status === 'dev' ? 'live' : ''}"></div>${app.status === 'dev' ? '開発中' : '予定'}</div>
+      <div class="card-platform">${app.platform}</div>
+    </div>`;
+
+  let sx = 0, sy = 0, dx = 0, dy = 0, drag = false;
+
+  function start(x, y) { sx = x; sy = y; dx = 0; dy = 0; drag = true; c.classList.add('dragging'); }
+  function move(x, y) {
+    if (!drag) return;
+    dx = x - sx; dy = y - sy;
+    c.style.transform = `translateX(${dx}px) translateY(${dy * .25}px) rotate(${dx * .07}deg)`;
+    const r = Math.min(Math.abs(dx) / 80, 1);
+    if (dx < -20) { hL.style.opacity = r; hR.style.opacity = 0; }
+    else if (dx > 20) { hR.style.opacity = r; hL.style.opacity = 0; }
+    else { hL.style.opacity = 0; hR.style.opacity = 0; }
+  }
+  function end() {
+    if (!drag) return; drag = false; c.classList.remove('dragging');
+    hL.style.opacity = 0; hR.style.opacity = 0;
+    if (Math.abs(dx) > 80) sw(dx < 0 ? 'left' : 'right');
+    else { c.style.transition = 'transform .38s cubic-bezier(.2,0,.2,1)'; c.style.transform = ''; setTimeout(() => c.style.transition = '', 400); }
+  }
+
+  c.addEventListener('mousedown', e => start(e.clientX, e.clientY));
+  window.addEventListener('mousemove', e => { if (drag) move(e.clientX, e.clientY); });
+  window.addEventListener('mouseup', () => { if (drag) end(); });
+  c.addEventListener('touchstart', e => { const t = e.touches[0]; start(t.clientX, t.clientY); }, { passive: true });
+  window.addEventListener('touchmove', e => { if (!drag) return; const t = e.touches[0]; move(t.clientX, t.clientY); }, { passive: true });
+  window.addEventListener('touchend', () => { if (drag) end(); });
+  return c;
+}
+
+function sw(dir) {
+  const top = stk.querySelector('.card:last-child');
+  if (!top) return;
+  top.classList.add(dir === 'left' ? 'fly-left' : 'fly-right');
+  setTimeout(() => { top.remove(); cur++; updCnt(); if (cur >= apps.length) showEmpty(); }, 340);
+}
+
+function updCnt() { cnt.textContent = cur < apps.length ? `${cur + 1} / ${apps.length}` : '— / —'; }
+
+function showEmpty() {
+  stk.style.display = 'none';
+  snav.style.display = 'none';
+  empty.classList.add('show');
+}
+
+function reset() {
+  cur = 0;
+  stk.innerHTML = `<div class="d-hint d-hint-l" id="hL">Skip</div><div class="d-hint d-hint-r" id="hR">Next</div>`;
+  [...apps].reverse().forEach(a => stk.appendChild(mkCard(a)));
+  stk.style.display = 'block';
+  snav.style.display = 'flex';
+  empty.classList.remove('show');
+  updCnt();
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 70); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+reset();
+</script>
 </body>
 </html>
